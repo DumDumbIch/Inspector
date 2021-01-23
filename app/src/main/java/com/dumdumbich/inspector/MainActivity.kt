@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         ui = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(ui.root)
-        ui.textView.text = "Test message"
+        ui.textParameter1.text = "Temperature outdoor"
+        ui.textValue1.text = "-25"
+        ui.textParameter2.text = "Temperature inside"
+        ui.textValue2.text = "+20"
     }
 }
