@@ -1,4 +1,4 @@
-package com.dumdumbich.inspector
+package com.dumdumbich.inspector.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
