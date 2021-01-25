@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dumdumbich.inspector.R
 import com.dumdumbich.inspector.data.model.Parameter
+import com.dumdumbich.inspector.databinding.ItemParameterBinding
 
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.ParameterViewHolder>() {
@@ -31,12 +32,11 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ParameterViewHolder>() {
 
 
     class ParameterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val name =  itemView.findViewById<TextView>(R.id.parameter_name)
-        private val value = itemView.findViewById<TextView>(R.id.parameter_value)
+        val ui: ItemParameterBinding = ItemParameterBinding.bind(itemView)
 
         fun bind(parameter: Parameter) {
-            name.text = parameter.name
-            value.text = parameter.value.toString()
+            ui.parameterName.text = parameter.name
+            ui.parameterValue.text = parameter.value.toString()
             itemView.setBackgroundColor(parameter.color)
         }
     }
