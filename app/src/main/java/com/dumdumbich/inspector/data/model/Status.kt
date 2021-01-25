@@ -16,17 +16,6 @@ class Status(val statusMessage: String) {
     private var boiler1 = Boiler()
     private var boiler2 = Boiler()
 
-    val temperatureOutdoor = weather.temperature
-    val temperatureInside = facility.temperature
-    val temperatureHeatNetworkSupply = heatNetwork.temperatureSupply
-    val temperatureHeatNetworkReturn = heatNetwork.temperatureReturn
-    val temperatureBoilerCircuitSupply = boilerCircuit.temperatureSupply
-    val temperatureBoilerCircuitReturn = boilerCircuit.temperatureReturn
-    val temperatureBoilerFirstSupply = boiler1.temperatureSupply
-    val temperatureBoilerFirstReturn = boiler1.temperatureReturn
-    val temperatureBoilerSecondSupply = boiler2.temperatureSupply
-    val temperatureBoilerSecondReturn = boiler2.temperatureReturn
-
     init {
         val statusArray = statusMessage.split(":")
         if (statusArray.isNotEmpty() && statusArray.size == statusArray[0].toInt() + 1) {
@@ -44,4 +33,16 @@ class Status(val statusMessage: String) {
             boiler2.temperatureReturn = statusArray[12].toInt()
         }
     }
+
+    val temperatureOutdoor = weather.temperature
+    val temperatureInside = facility.temperature
+    val temperatureHeatNetworkSupply = heatNetwork.temperatureSupply
+    val temperatureHeatNetworkReturn = heatNetwork.temperatureReturn
+    val temperatureBoilerCircuitSupply = boilerCircuit.temperatureSupply
+    val temperatureBoilerCircuitReturn = boilerCircuit.temperatureReturn
+    val temperatureBoilerFirstSupply = boiler1.temperatureSupply
+    val temperatureBoilerFirstReturn = boiler1.temperatureReturn
+    val temperatureBoilerSecondSupply = boiler2.temperatureSupply
+    val temperatureBoilerSecondReturn = boiler2.temperatureReturn
+
 }
