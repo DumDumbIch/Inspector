@@ -1,16 +1,15 @@
-package com.dumdumbich.inspector.ui.main
+package com.dumdumbich.inspector.ui.parameters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dumdumbich.inspector.R
 import com.dumdumbich.inspector.data.model.Parameter
 import com.dumdumbich.inspector.databinding.ItemParameterBinding
 
 
-class MainAdapter : RecyclerView.Adapter<MainAdapter.ParameterViewHolder>() {
+class ParametersAdapter : RecyclerView.Adapter<ParametersAdapter.ParameterViewHolder>() {
 
     var parameters: List<Parameter> = listOf()
         set(value) {
@@ -29,7 +28,6 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ParameterViewHolder>() {
     }
 
     override fun getItemCount(): Int = parameters.size
-
 
     class ParameterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ui: ItemParameterBinding = ItemParameterBinding.bind(itemView)
