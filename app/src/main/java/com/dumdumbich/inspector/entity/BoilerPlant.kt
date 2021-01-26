@@ -1,11 +1,9 @@
-package com.dumdumbich.inspector.data.model
-
-import com.dumdumbich.inspector.entity.*
+package com.dumdumbich.inspector.entity
 
 /**
  *  Состояние наблюдаемого объекта
  */
-class Status(val statusMessage: String) {
+class BoilerPlant(val statusMessage: String) {
 
     private var date = ""
     private var time = ""

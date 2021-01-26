@@ -23,7 +23,7 @@ class ParametersActivity : AppCompatActivity() {
         adapter = ParametersAdapter()
         ui.mainRecycler.adapter = adapter
         viewModel.viewState().observe(this, Observer<ParametersViewState> { state ->
-            state?.let { adapter.parameters = state.parameters }
+            state?.let { adapter.parameterCards = state.parameterCards }
         })
     }
 }
