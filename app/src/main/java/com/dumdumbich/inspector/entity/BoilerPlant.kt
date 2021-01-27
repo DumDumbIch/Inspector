@@ -32,15 +32,25 @@ class BoilerPlant(val statusMessage: String) {
         }
     }
 
-    val temperatureOutdoor = weather.temperature
-    val temperatureInside = facility.temperature
-    val temperatureHeatNetworkSupply = heatNetwork.temperatureSupply
-    val temperatureHeatNetworkReturn = heatNetwork.temperatureReturn
-    val temperatureBoilerCircuitSupply = boilerCircuit.temperatureSupply
-    val temperatureBoilerCircuitReturn = boilerCircuit.temperatureReturn
-    val temperatureBoilerFirstSupply = boiler1.temperatureSupply
-    val temperatureBoilerFirstReturn = boiler1.temperatureReturn
-    val temperatureBoilerSecondSupply = boiler2.temperatureSupply
-    val temperatureBoilerSecondReturn = boiler2.temperatureReturn
+    val temperatureOutdoor: Int
+        get() = weather.temperature
+    val temperatureInside: Int
+        get() = facility.temperature
+    val temperatureHeatNetworkSupply: Int
+        get() = heatNetwork.temperatureSupply
+    val temperatureHeatNetworkReturn: Int
+        get() = heatNetwork.temperatureReturn
+    val temperatureBoilerCircuitSupply: Int
+        get() = boilerCircuit.temperatureSupply
+    val temperatureBoilerCircuitReturn: Int
+        get() = boilerCircuit.temperatureReturn
+    val temperatureBoilerFirstSupply: Int
+        get() = boiler1.temperatureSupply
+    val temperatureBoilerFirstReturn: Int
+        get() = boiler1.temperatureReturn
+    val temperatureBoilerSecondSupply: Int
+        get() = boiler2.temperatureSupply
+    val temperatureBoilerSecondReturn: Int
+        get() = boiler2.temperatureReturn
 
 }
