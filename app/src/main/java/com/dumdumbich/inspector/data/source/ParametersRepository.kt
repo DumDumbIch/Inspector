@@ -23,7 +23,7 @@ import com.dumdumbich.inspector.entity.BoilerPlant
 object ParametersRepository {
     var statusMessage: String = "18:18012021:1006:-21:21:72:64:75:64:73:66:78:64:103:2048:961:1921:0:0"
     private var boilerPlant: BoilerPlant
-    var parameterCards: List<ParameterCard>
+    var parameterCards: MutableList<ParameterCard>
 
     init {
         boilerPlant = BoilerPlant(statusMessage)
