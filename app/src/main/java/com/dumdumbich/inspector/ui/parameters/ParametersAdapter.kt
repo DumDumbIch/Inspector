@@ -1,17 +1,17 @@
-package com.dumdumbich.inspector.ui.main
+package com.dumdumbich.inspector.ui.parameters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dumdumbich.inspector.R
-import com.dumdumbich.inspector.data.model.Parameter
+import com.dumdumbich.inspector.data.model.ParameterCard
+import com.dumdumbich.inspector.databinding.ItemParameterBinding
 
 
-class MainAdapter : RecyclerView.Adapter<MainAdapter.ParameterViewHolder>() {
+class ParametersAdapter : RecyclerView.Adapter<ParametersAdapter.ParameterViewHolder>() {
 
-    var parameters: List<Parameter> = listOf()
+    var parameterCards: List<ParameterCard> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -24,20 +24,18 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ParameterViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ParameterViewHolder, position: Int) {
-        holder.bind(parameters[position])
+        holder.bind(parameterCards[position])
     }
 
-    override fun getItemCount(): Int = parameters.size
-
+    override fun getItemCount(): Int = parameterCards.size
 
     class ParameterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val name =  itemView.findViewById<TextView>(R.id.parameter_name)
-        private val value = itemView.findViewById<TextView>(R.id.parameter_value)
+        val ui: ItemParameterBinding = ItemParameterBinding.bind(itemView)
 
-        fun bind(parameter: Parameter) {
-            name.text = parameter.name
-            value.text = parameter.value.toString()
-            itemView.setBackgroundColor(parameter.color)
+        fun bind(parameterCard: ParameterCard) {
+            ui.parameterName.text = parameterCard.name
+            ui.parameterValue.text = parameterCard.value.toString()
+            itemView.setBackgroundColor(parameterCard.color)
         }
     }
 
