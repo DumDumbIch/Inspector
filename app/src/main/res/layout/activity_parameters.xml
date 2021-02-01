@@ -29,6 +29,6 @@
         android:layout_height="match_parent"
         android:padding="5dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_parameter" />
+        tools:listitem="@layout/card_parameter" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
