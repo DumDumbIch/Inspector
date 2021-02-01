@@ -14,6 +14,6 @@
     <color name="color_blue">#FF80D8FF</color>
     <color name="color_red">#FFFF8A80</color>
     <color name="color_violet">#FFE1BEE7</color>
-    <color name="color_pink">#FFF8BBD0</color>
+    <color name="color_pink">#f8bbd0</color>
     <color name="color_aquamarine">#FF7FFFD4</color>
 </resources>
