@@ -1,7 +1,9 @@
 package com.dumdumbich.inspector.data.model
 
+import com.dumdumbich.inspector.data.utils.Colors
+
 data class FacilityCard(
     val name: String = "",
     val address: String = "",
-    val color: Int = 0xfff06292.toInt()
+    val color: Colors = Colors.AQUAMARINE
 )

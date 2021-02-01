@@ -15,6 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.facility.FacilityActivity"></activity>
         <activity android:name=".ui.parameters.ParametersActivity"></activity>
     </application>
 

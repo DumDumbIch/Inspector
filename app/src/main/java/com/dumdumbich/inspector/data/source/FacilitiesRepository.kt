@@ -11,7 +11,7 @@ object FacilitiesRepository {
     var facilityCards: MutableList<FacilityCard>
 
     init {
-        facilityCards= mutableListOf(
+        facilityCards = mutableListOf(
             FacilityCard("ОАО Шуйская водка", "Ивановская обл., г.Шуя"),
             FacilityCard("ООО Мир Пиццы", "г.Иваново, ул.Марии Рябининой"),
             FacilityCard("ООО Сервис-Универсал", "г.Иваново, Загородное шоссе")
