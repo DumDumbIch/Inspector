@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="5dp"
         android:orientation="horizontal">
 
@@ -17,16 +17,16 @@
             android:id="@+id/parameter_name"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="0.9"
             android:padding="5dp"
+            android:gravity="start"
             tools:text="Name of parameter" />
 
         <TextView
             android:id="@+id/parameter_value"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="5dp"
-            android:layout_weight="0.1"
+            android:gravity="end"
             tools:text="99" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

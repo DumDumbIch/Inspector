@@ -5,14 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dumdumbich.inspector.R
-import com.dumdumbich.inspector.data.model.ParameterCard
-import com.dumdumbich.inspector.databinding.CardParameterBinding
+import com.dumdumbich.inspector.data.model.ParameterItem
+import com.dumdumbich.inspector.databinding.ItemParameterBinding
 import com.dumdumbich.inspector.ui.utils.ColorsToView
 
+interface OnItemClickListener {
+    fun onItemClick(parameterItem: ParameterItem)
+}
 
-class ParametersAdapter : RecyclerView.Adapter<ParametersAdapter.ParameterViewHolder>() {
-
-    var parameterCards: List<ParameterCard> = listOf()
+class ParametersAdapter() : RecyclerView.Adapter<ParametersAdapter.ParameterViewHolder>() {
+//    private val onItemClickListener: OnItemClickListener
+    var parameterItems: List<ParameterItem> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -20,23 +23,24 @@ class ParametersAdapter : RecyclerView.Adapter<ParametersAdapter.ParameterViewHo
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParameterViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.card_parameter, parent, false)
+        val view = inflater.inflate(R.layout.item_parameter, parent, false)
         return ParameterViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ParameterViewHolder, position: Int) {
-        holder.bind(parameterCards[position])
+        holder.bind(parameterItems[position])
     }
 
-    override fun getItemCount(): Int = parameterCards.size
+    override fun getItemCount(): Int = parameterItems.size
 
-    class ParameterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ui: CardParameterBinding = CardParameterBinding.bind(itemView)
+    inner class ParameterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val ui: ItemParameterBinding = ItemParameterBinding.bind(itemView)
 
-        fun bind(parameterCard: ParameterCard) {
-            ui.parameterName.text = parameterCard.name
-            ui.parameterValue.text = parameterCard.value.toString()
-            itemView.setBackgroundResource(ColorsToView.assign(parameterCard.color))
+        fun bind(parameterItem: ParameterItem) {
+            ui.parameterName.text = parameterItem.name
+            ui.parameterValue.text = parameterItem.value.toString()
+            itemView.setBackgroundResource(ColorsToView.assign(parameterItem.color))
+//            itemView.setOnClickListener { onItemClickListener.onItemClick(parameterItem) }
         }
     }
 

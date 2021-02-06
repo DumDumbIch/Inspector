@@ -1,8 +1,8 @@
 package com.dumdumbich.inspector.ui.parameters
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dumdumbich.inspector.databinding.ActivityParametersBinding
@@ -19,11 +19,24 @@ class ParametersActivity : AppCompatActivity() {
         ui = ActivityParametersBinding.inflate(LayoutInflater.from(this))
         setContentView(ui.root)
         setSupportActionBar(ui.toolbar)
-        viewModel = ViewModelProvider(this).get(ParametersViewModel::class.java)
-        adapter = ParametersAdapter()
+
+        adapter= ParametersAdapter()
+/*
+        adapter = ParametersAdapter(object:OnItemClickListener{
+            override fun onItemClick(parameterItem: ParameterItem) {
+
+            }
+        })
+*/
         ui.mainRecycler.adapter = adapter
-        viewModel.viewState().observe(this, Observer<ParametersViewState> { state ->
-            state?.let { adapter.parameterCards = state.parameterCards }
+        viewModel = ViewModelProvider(this).get(ParametersViewModel::class.java)
+        viewModel.viewState().observe(this, { state ->
+            state?.let { adapter.parameterItems = state.parameterItems }
         })
     }
+
+//    private fun openParameterActivity(parameterItem: ParameterItem?){
+//        val intent=ParameterActivity.getStartIntent(this,parameterItem)
+//        startActivity(intent)
+//    }
 }

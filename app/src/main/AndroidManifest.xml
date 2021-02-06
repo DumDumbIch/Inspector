@@ -3,20 +3,19 @@
     package="com.dumdumbich.inspector">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Inspector">
-        <activity android:name=".ui.facilities.FacilitiesActivity">
+        <activity android:name=".ui.parameters.ParametersActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.facility.FacilityActivity"></activity>
-        <activity android:name=".ui.parameters.ParametersActivity"></activity>
     </application>
 
 </manifest>
